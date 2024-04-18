@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+    <div class="">
+        <div>
+            {% if page.title %}
+                <p>
+                    <h1 id="page-title" class="page__title p-name" itemprop="headline">
+                        {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
+                    </h1>
+                </p>
+            {% endif %}
+        </div>
+
+        <div class="page__content e-content" itemprop="text">
+            {{ content }}
+        </div>
+
+        <hr />
+
+        <div class="entries-list">
+          {% for post in site.posts %}
+            {% include archive-single.html type="grid" %}
+          {% endfor %}
+        </div>
+    </div>
+</div>

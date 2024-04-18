@@ -95,8 +95,10 @@
               exec ${rustTarget}/bin/cargo "$@"
           esac
         '';
+
+        site = callPackage ./site {};
       in
-      {
+      rec {
         checks = {
           inherit package;
 
@@ -116,11 +118,15 @@
               pkgs.coreutils
             ];
           };
-        };
+        }
+        // site.checks
+        ;
 
         packages = {
           default = package;
-        };
+        }
+        // site.packages
+        ;
 
         devShells.default = pkgs.mkShell {
           buildInputs = buildInputs ++ [];
@@ -131,6 +137,7 @@
             rustTarget
 
             pkgs.gitlint
+            packages.gems
           ];
         };
       }
