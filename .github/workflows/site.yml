@@ -55,7 +55,7 @@ jobs:
         run: bash ./scripts/update_coverage_list.sh
 
       - name: Build site
-        run: nix --extra-experimental-features "nix-command flakes" build .#site
+        run: nix --extra-experimental-features "nix-command flakes" run .#buildSite
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4
