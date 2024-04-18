@@ -1,6 +1,7 @@
 { pkgs
 , stdenv
 , ruby
+, src
 , ...
 }:
 
@@ -16,13 +17,15 @@ let
 
   site = stdenv.mkDerivation {
     name = "site";
-    src = ./.;
+    inherit src;
 
     phases = [ "unpackPhase" "buildPhase" ];
 
     buildInputs = [gems ruby];
     buildPhase = ''
       mkdir $out
+
+      cd "${src}/site"
       jekyll build --destination $out/
     '';
   };
