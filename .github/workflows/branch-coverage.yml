@@ -1,10 +1,9 @@
 name: Coverage on branch
 
 on:
-  issues:
+  pull_request:
     types:
       - labeled
-  pull_request:
     branches:
       - master
 
