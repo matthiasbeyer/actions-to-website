@@ -23,16 +23,10 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v25
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
-
-      - uses: cachix/cachix-action@v14
-        with:
-          name: matthiasbeyer-actions-to-website
-          # If you chose API tokens for write access OR if you have a private cache
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - uses: actions/checkout@v3
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/flake-checker-action@main
 
       - name: Build coverage report for PR
         run: nix --extra-experimental-features "nix-command flakes" build .#coverage
