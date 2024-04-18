@@ -35,6 +35,8 @@ jobs:
           commit_message: Deploy coverage report for master commit ${{ github.event.head_commit.after }}
 
   site:
+    needs:
+      - site-coverage-master
     permissions:
       contents: write
     concurrency:
