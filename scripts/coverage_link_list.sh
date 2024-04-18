@@ -26,7 +26,7 @@ echo "  <th>HTML Report</th>"
 echo "  <th>lcov</th>"
 echo "</tr>"
 
-git log -n "${link_count}" --format="%h %H %cs" --first-parent "${main_branch_name}" | \
+git log -n "${link_count}" --format="%h %H %cI" --first-parent "${main_branch_name}" | \
     while read -r shorthash hash date;
     do
         linkroot="${website_base_path}/${coverage_subdir}/${hash}"
