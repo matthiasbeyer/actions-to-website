@@ -174,12 +174,18 @@
               runtimeInputs = [
                 pkgs.git
                 inputs.self.packages."${system}".createDenyReport
+                pkgs.cargo-deny
+                pkgs.jq
               ];
 
               text = ''
                 mkdir -p site/_data
                 commit="$(git rev-parse HEAD)"
-                createDenyReport > "site/_data/denyreport/''${commit}.json"
+                cargo deny --format json check all > file 2>&1
+                cat file
+                gitrev="''$(git rev-parse HEAD)"
+                shortrev="''$(echo "$gitrev" | head -c 10)"
+                jq -n "{\"data\":[inputs],\"rev\":\"''${gitrev}\",\"shortrev\":\"''${shortrev}\"}" <file > "site/_data/denyreport/''${commit}.json"
               '';
             };
           };
