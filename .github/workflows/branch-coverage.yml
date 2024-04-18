@@ -1,7 +1,6 @@
 name: Coverage on branch
 
 on:
-  push:
   pull_request:
     types:
       - labeled
