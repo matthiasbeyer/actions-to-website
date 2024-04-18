@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - master
+  push:
 
 jobs:
   site-coverage-branch:
