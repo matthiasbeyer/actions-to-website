@@ -4,7 +4,7 @@ title: cargo-deny reports
 permalink: /deny/
 ---
 
-This page contains links to the last 10 `cargo-deny` reports for merges on the
+This page lists the `cargo-deny` report summaries for commits on the
 `master` branch of the project.
 
 <table border="1">
