@@ -32,7 +32,7 @@ let
       mkdir $out
 
       cd ${src}/site
-      jekyll build --destination $out/
+      jekyll build --disable-disk-cache --destination $out/
     '';
   };
 in
