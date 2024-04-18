@@ -8,7 +8,7 @@ function bail() {
 main_branch_name="$1"
 website_base_path="$2"
 coverage_subdir="$3"
-link_count="$4"
+link_count="${4:-}"
 
 [[ -z "$main_branch_name" ]] && bail "Missing argument: main branch name (ARG 1)"
 [[ -z "$website_base_path" ]] && bail "Missing argument: website base path (ARG 2)"
