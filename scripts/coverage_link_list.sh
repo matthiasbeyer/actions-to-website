@@ -13,10 +13,23 @@ coverage_subdir="$3"
 [[ -z "$website_base_path" ]] && bail "Missing argument: website base path (ARG 2)"
 [[ -z "$coverage_subdir" ]] && bail "Missing argument: coverage sub directory (ARG 3)"
 
-git log --format="%H %cs" --first-parent "${main_branch_name}" | \
-    while read -r hash date;
+echo "<table>"
+echo "<tr>"
+echo "  <th>Date</th>"
+echo "  <th>HTML Report</th>"
+echo "  <th>lcov</th>"
+echo "</tr>"
+
+git log --format="%h %H %cs" --first-parent "${main_branch_name}" | \
+    while read -r shorthash hash date;
     do
         linkroot="${website_base_path}/${coverage_subdir}/${hash}"
-        echo "* [${date} ${hash}](${linkroot}/html/index.html) ([lcov](${linkroot}/lcov))"
+
+        echo "<tr>"
+        echo "  <th>${date}</th>"
+        echo "  <th><a href=\"${linkroot}/html/index.html\">${shorthash}</a></th>"
+        echo "  <th><a href=\"${linkroot}/lcov\">lcov</a></th>"
+        echo "</tr>"
     done
+echo "</table>"
 
