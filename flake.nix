@@ -35,6 +35,8 @@
             craneLib
             src
             version;
+
+            selfPackages = inputs.self.packages."${system}";
         });
 
         unstable = import inputs.unstable-nixpkgs {
@@ -97,6 +99,7 @@
         '';
 
         site = callPackage ./site {};
+        scripts = callPackage ./scripts {};
       in
       rec {
         checks = {
@@ -124,9 +127,29 @@
 
         packages = {
           default = package;
+
+          coverage-html = craneLib.cargoLlvmCov {
+            inherit cargoArtifacts buildInputs src pname;
+            cargoLlvmCovExtraArgs = "--html --output-dir $out";
+          };
         }
         // site.packages
+        // scripts.packages
         ;
+
+        apps = {
+          buildSite = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "buildSite";
+              runtimeInputs = [ packages.gems ];
+
+              text = ''
+                cd site
+                jekyll build --destination ../public
+              '';
+            };
+          };
+        };
 
         devShells.default = pkgs.mkShell {
           buildInputs = buildInputs ++ [];
@@ -135,6 +158,8 @@
             customCargoMultiplexer
             rustfmt'
             rustTarget
+
+            pkgs.cargo-llvm-cov
 
             pkgs.gitlint
             packages.gems

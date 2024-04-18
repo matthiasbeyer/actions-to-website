@@ -1,6 +1,8 @@
 { pkgs
 , stdenv
 , ruby
+, src
+, selfPackages
 , ...
 }:
 
@@ -16,14 +18,21 @@ let
 
   site = stdenv.mkDerivation {
     name = "site";
-    src = ./.;
+    inherit src;
 
     phases = [ "unpackPhase" "buildPhase" ];
 
     buildInputs = [gems ruby];
+
+    nativeBuildInputs = [
+      selfPackages.coverageLinkList
+    ];
+
     buildPhase = ''
       mkdir $out
-      jekyll build --destination $out/
+
+      cd ${src}/site
+      jekyll build --disable-disk-cache --destination $out/
     '';
   };
 in
