@@ -124,6 +124,11 @@
 
         packages = {
           default = package;
+
+          coverage-html = craneLib.cargoLlvmCov {
+            inherit cargoArtifacts buildInputs src pname;
+            cargoLlvmCovExtraArgs = "--html --output-dir $out";
+          };
         }
         // site.packages
         ;
@@ -135,6 +140,8 @@
             customCargoMultiplexer
             rustfmt'
             rustTarget
+
+            pkgs.cargo-llvm-cov
 
             pkgs.gitlint
             packages.gems
