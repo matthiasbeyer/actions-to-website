@@ -30,7 +30,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./result/html/
-          destination_dir: llvmcov/${ github.event.head_commit.after }
+          destination_dir: llvmcov/${{ github.event.head_commit.after }}
           commit_message: Deploy coverage report for master commit ${{ github.event.head_commit.after }}
 
   site:
