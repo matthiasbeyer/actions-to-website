@@ -31,6 +31,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./result/html/
           destination_dir: llvmcov/${{ github.event.head_commit.after }}
+          keep_files: true
           commit_message: Deploy coverage report for master commit ${{ github.event.head_commit.after }}
 
   site:
@@ -60,5 +61,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public/
+          keep_files: true
           commit_message: Deploy website from commit ${{ github.event.head_commit.after }}
 
