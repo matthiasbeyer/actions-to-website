@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-cargo deny --format json check all |& cat | jq -s '.'
+gitrev="$(git rev-parse HEAD)"
+shortrev="$(echo "$gitrev" | head -c 10)"
+
+cargo deny --format json check all |& cat |  jq -n "{\"data\":[inputs],\"rev\":\"${gitrev}\",\"shortrev\":\"${shortrev}\"}"
