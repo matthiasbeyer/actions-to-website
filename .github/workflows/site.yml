@@ -49,10 +49,12 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Build coverageLinkList generator
-        run: nix --extra-experimental-features "nix-command flakes" build --no-link .#coverageLinkList --print-out-paths >> $GITHUB_PATH
+        run: nix --extra-experimental-features "nix-command flakes" build --no-link .#coverageLinkList
 
       - name: Update coverage list
-        run: bash ./scripts/update_coverage_list.sh
+        run: |
+          nix --extra-experimental-features "nix-command flakes" build .#coverageLinkList
+          PATH=./result/bin:$PATH bash ./scripts/update_coverage_list.sh
 
       - name: Build site
         run: nix --extra-experimental-features "nix-command flakes" run .#buildSite
