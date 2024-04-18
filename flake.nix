@@ -125,12 +125,30 @@
         // site.checks
         ;
 
-        packages = {
+        packages = rec {
           default = package;
+
+          coverage = pkgs.symlinkJoin {
+            name = "coverage";
+            paths = [
+              coverage-html
+              coverage-lcov
+            ];
+          };
 
           coverage-html = craneLib.cargoLlvmCov {
             inherit cargoArtifacts buildInputs src pname;
             cargoLlvmCovExtraArgs = "--html --output-dir $out";
+          };
+
+          coverage-lcov = craneLib.cargoLlvmCov {
+            inherit cargoArtifacts buildInputs src pname;
+
+            preBuild = ''
+              mkdir $out
+            '';
+
+            cargoLlvmCovExtraArgs = "--lcov --output-path $out/lcov";
           };
         }
         // site.packages
