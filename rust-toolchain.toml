@@ -1,0 +1,5 @@
+[toolchain]
+channel = "1.77.0"
+
+# `llvm-tools-preview` is needed for cargo-llvm-cov
+components = ["llvm-tools-preview"]
