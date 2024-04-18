@@ -97,6 +97,7 @@
         '';
 
         site = callPackage ./site {};
+        scripts = callPackage ./scripts {};
       in
       rec {
         checks = {
@@ -131,6 +132,7 @@
           };
         }
         // site.packages
+        // scripts.packages
         ;
 
         devShells.default = pkgs.mkShell {
