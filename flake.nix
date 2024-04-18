@@ -137,6 +137,20 @@
         // scripts.packages
         ;
 
+        apps = {
+          buildSite = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "buildSite";
+              runtimeInputs = [ packages.gems ];
+
+              text = ''
+                cd site
+                jekyll build --destination ../public
+              '';
+            };
+          };
+        };
+
         devShells.default = pkgs.mkShell {
           buildInputs = buildInputs ++ [];
 
