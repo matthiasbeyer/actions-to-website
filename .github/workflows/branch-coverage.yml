@@ -10,7 +10,6 @@ on:
 jobs:
   site-coverage-branch:
     if: contains(github.event.issue.labels.*.name, 'generate-coverage')
-
     permissions:
       contents: write
       pull-requests: write
