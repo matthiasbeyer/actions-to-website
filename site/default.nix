@@ -2,6 +2,7 @@
 , stdenv
 , ruby
 , src
+, selfPackages
 , ...
 }:
 
@@ -22,10 +23,15 @@ let
     phases = [ "unpackPhase" "buildPhase" ];
 
     buildInputs = [gems ruby];
+
+    nativeBuildInputs = [
+      selfPackages.coverageLinkList
+    ];
+
     buildPhase = ''
       mkdir $out
 
-      cd "${src}/site"
+      cd ${src}/site
       jekyll build --destination $out/
     '';
   };

@@ -35,6 +35,8 @@
             craneLib
             src
             version;
+
+            selfPackages = inputs.self.packages."${system}";
         });
 
         unstable = import inputs.unstable-nixpkgs {
