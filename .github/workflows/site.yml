@@ -29,13 +29,13 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
       - name: Build coverage report for master
-        run: nix --extra-experimental-features "nix-command flakes" build .#coverage-html
+        run: nix --extra-experimental-features "nix-command flakes" build .#coverage
 
       - name: Deploy coverage report for master
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./result/html/
+          publish_dir: ./result/
           destination_dir: llvmcov/${{ github.sha }}
           keep_files: true
           commit_message: Deploy coverage report for master commit ${{ github.event.head_commit.after }}

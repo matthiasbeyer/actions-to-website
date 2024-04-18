@@ -17,6 +17,6 @@ git log --format="%H %cs" --first-parent "${main_branch_name}" | \
     while read -r hash date;
     do
         linkroot="${website_base_path}/${coverage_subdir}/${hash}"
-        echo "* [${date} ${hash}](${linkroot}/index.html) ([lcov](${linkroot}/lcov))"
+        echo "* [${date} ${hash}](${linkroot}/html/index.html) ([lcov](${linkroot}/lcov))"
     done
 
