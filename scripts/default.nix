@@ -25,9 +25,11 @@ let
   # so we get all the automatic shell script checking
   createDenyReport = pkgs.writeShellApplication {
     name = "createDenyReport";
-    runtimeInputs = [ pkgs.cargo-deny pkgs.jq ];
+    runtimeInputs = [ pkgs.ruby pkgs.cargo-deny ];
 
-    text = builtins.readFile ./create-deny-report.sh;
+    text = ''
+      ruby ${./create-deny-report.rb}
+    '';
   };
 in
 {
