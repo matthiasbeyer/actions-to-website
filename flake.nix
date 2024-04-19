@@ -200,6 +200,7 @@
             rustTarget
 
             pkgs.cargo-llvm-cov
+            pkgs.cargo-deny
 
             pkgs.gitlint
             packages.gems
