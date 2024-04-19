@@ -9,4 +9,4 @@ shortrev="$(echo "$gitrev" | head -c 10)"
 
 cat tmpfile >&2
 
-jq -n "{\"data\":[inputs],\"rev\":\"${gitrev}\",\"shortrev\":\"${shortrev}\"}" tmpfile
+jq -s "{\"data\":[inputs],\"rev\":\"${gitrev}\",\"shortrev\":\"${shortrev}\"}" tmpfile
