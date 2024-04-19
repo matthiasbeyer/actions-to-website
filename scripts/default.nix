@@ -1,4 +1,5 @@
 { pkgs
+, rustTarget
 , ...
 }:
 
@@ -25,7 +26,7 @@ let
   # so we get all the automatic shell script checking
   createDenyReport = pkgs.writeShellApplication {
     name = "createDenyReport";
-    runtimeInputs = [ pkgs.ruby pkgs.cargo-deny ];
+    runtimeInputs = [ rustTarget pkgs.ruby pkgs.cargo-deny ];
 
     text = ''
       ruby ${./create-deny-report.rb}

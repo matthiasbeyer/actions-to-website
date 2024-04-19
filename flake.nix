@@ -34,7 +34,9 @@
             callPackage
             craneLib
             src
-            version;
+            version
+            rustTarget
+            ;
 
             selfPackages = inputs.self.packages."${system}";
         });
