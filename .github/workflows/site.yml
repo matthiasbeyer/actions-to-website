@@ -31,15 +31,6 @@ jobs:
       - name: Build coverage report for master
         run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#denyReport
 
-      - name: Deploy coverage report for master
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site/_data/denyreport/
-          destination_dir: _data/denyreport/
-          keep_files: true
-          commit_message: Deploy deny report for master commit ${{ github.sha }}
-
       - name: Build site
         run: nix --extra-experimental-features "nix-command flakes" run .#buildSite
 
