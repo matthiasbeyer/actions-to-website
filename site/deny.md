@@ -4,8 +4,8 @@ title: cargo-deny reports
 permalink: /deny/
 ---
 
-This page lists the `cargo-deny` report summaries for commits on the
-`master` branch of the project.
+This page shows the `cargo-deny` report summary for the last commit
+on the `master` branch of the project.
 
 <table border="1">
     <tr>
@@ -38,8 +38,7 @@ This page lists the `cargo-deny` report summaries for commits on the
         <th>N</th>
         <th>H</th>
     </tr>
-{% for object in site.data.denyreport %}
-    {% for report in object[1].data %}
+    {% for report in site.data.denyreport[1].data %}
         {% if report.type == "summary" %}
         <tr>
             <td>
@@ -70,7 +69,6 @@ This page lists the `cargo-deny` report summaries for commits on the
         </tr>
         {% endif %}
     {% endfor %}
-{% endfor %}
 </table>
 
 For more information, see the
