@@ -208,6 +208,7 @@
 
             pkgs.cargo-llvm-cov
             pkgs.cargo-deny
+            pkgs.cargo-outdated
 
             pkgs.gitlint
             packages.gems
