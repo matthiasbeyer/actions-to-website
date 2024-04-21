@@ -75,11 +75,13 @@ on the `master` branch of the project.
 
 <ul>
 {% for report in site.data.denyreport[1].data %}
+{% for report in site.data.denyreport[1].data %}
     {% if report.type == "diagnostic" %}
         <li>
             {{ report.message }} - Severity {{ report.severity }}
         </li>
     {% endif %}
+{% endfor %}
 {% endfor %}
 </ul>
 
