@@ -74,6 +74,9 @@ jobs:
       - name: Build deny report for master
         run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#denyReport
 
+      - name: Build outdated report for master
+        run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#outdatedReport
+
       - name: Build site
         run: nix --extra-experimental-features "nix-command flakes" run .#buildSite
 
