@@ -71,14 +71,41 @@ on the `master` branch of the project.
     {% endfor %}
 </table>
 
-## Diagnostics
+# Diagnostics
+
+The following diagnostics were found.
+
+For details see the last build in the
+[github repository](https://github.com/matthiasbeyer/actions-to-website).
+
+{% assign diagnostics = site.data.denyreport.data | where: "type", "diagnostic" %}
+
+## Errors
 
 <ul>
-{% for report in site.data.denyreport[1].data %}
-    {% if report.type == "diagnostic" %}
-        <li>
-            {{ report.message }} - Severity {{ report.severity }}
-        </li>
+{% for diag in diagnostics %}
+    {%- if forloop.length == 0 -%}
+        <li>None</li>
+        {% break %}
+    {%- endif -%}
+
+    {% if diag.fields.severity == "error" %}
+        <li>{{ diag.fields.message }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+## Warnings
+
+<ul>
+{% for diag in diagnostics %}
+    {%- if forloop.length == 0 -%}
+        <li>None</li>
+        {% break %}
+    {%- endif -%}
+
+    {% if diag.fields.severity == "warning" %}
+        <li>{{ diag.fields.message }}</li>
     {% endif %}
 {% endfor %}
 </ul>
