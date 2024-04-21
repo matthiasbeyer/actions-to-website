@@ -38,37 +38,36 @@ on the `master` branch of the project.
         <th>N</th>
         <th>H</th>
     </tr>
-    {% for report in site.data.denyreport[1].data %}
-        {% if report.type == "summary" %}
-        <tr>
-            <td>
-                <a href="https://github.com/matthiasbeyer/actions-to-website/commit/{{ object[1].gitrev }}">
-                    {{ object[1].shortrev }}
-                </a>
-            </td>
+    <tr>
+        <td>
+            <a href="https://github.com/matthiasbeyer/actions-to-website/commit/{{ site.data.denyreport.gitrev }}">
+                {{ site.data.denyreport.shortrev }}
+            </a>
+        </td>
 
-            <td>{{ report.fields.advisories.errors }}</td>
-            <td>{{ report.fields.advisories.warnings }}</td>
-            <td>{{ report.fields.advisories.notes }}</td>
-            <td>{{ report.fields.advisories.helps }}</td>
+        {% assign summary = site.data.denyreport.data | where: "type", "summary" | first %}
 
-            <td>{{ report.fields.bans.errors }}</td>
-            <td>{{ report.fields.bans.warnings }}</td>
-            <td>{{ report.fields.bans.notes }}</td>
-            <td>{{ report.fields.bans.helps }}</td>
+        <td
+        <td style="background-color: {%- if summary.fields.advisories.errors > 0 -%}#FE2D00{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.errors }}</td>
+        <td style="background-color: {%- if summary.fields.advisories.warnings > 0 -%}#F3FF00{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.warnings }}</td>
+        <td style="background-color: {%- if summary.fields.advisories.notes > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.notes }}</td>
+        <td style="background-color: {%- if summary.fields.advisories.helps > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.helps }}</td>
 
-            <td>{{ report.fields.licenses.errors }}</td>
-            <td>{{ report.fields.licenses.warnings }}</td>
-            <td>{{ report.fields.licenses.notes }}</td>
-            <td>{{ report.fields.licenses.helps }}</td>
+        <td style="background-color: {%- if summary.fields.bans.errors > 0 -%}#FE2D00{%- else -%}#00000{%- endif -%};">{{ summary.fields.bans.errors }}</td>
+        <td style="background-color: {%- if summary.fields.bans.warnings > 0 -%}#F3FF00{%- else -%}#00000{%- endif -%};">{{ summary.fields.bans.warnings }}</td>
+        <td style="background-color: {%- if summary.fields.bans.notes > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.bans.notes }}</td>
+        <td style="background-color: {%- if summary.fields.bans.helps > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.bans.helps }}</td>
 
-            <td>{{ report.fields.sources.errors }}</td>
-            <td>{{ report.fields.sources.warnings }}</td>
-            <td>{{ report.fields.sources.notes }}</td>
-            <td>{{ report.fields.sources.helps }}</td>
-        </tr>
-        {% endif %}
-    {% endfor %}
+        <td style="background-color: {%- if summary.fields.licenses.errors > 0 -%}#FE2D00{%- else -%}#00000{%- endif -%};">{{ summary.fields.licenses.errors }}</td>
+        <td style="background-color: {%- if summary.fields.licenses.warnings > 0 -%}#F3FF00{%- else -%}#00000{%- endif -%};">{{ summary.fields.licenses.warnings }}</td>
+        <td style="background-color: {%- if summary.fields.licenses.notes > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.licenses.notes }}</td>
+        <td style="background-color: {%- if summary.fields.licenses.helps > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.licenses.helps }}</td>
+
+        <td style="background-color: {%- if summary.fields.sources.errors > 0 -%}#FE2D00{%- else -%}#00000{%- endif -%};">{{ summary.fields.sources.errors }}</td>
+        <td style="background-color: {%- if summary.fields.sources.warnings > 0 -%}#F3FF00{%- else -%}#00000{%- endif -%};">{{ summary.fields.sources.warnings }}</td>
+        <td style="background-color: {%- if summary.fields.sources.notes > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.sources.notes }}</td>
+        <td style="background-color: {%- if summary.fields.sources.helps > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.sources.helps }}</td>
+    </tr>
 </table>
 
 # Diagnostics
