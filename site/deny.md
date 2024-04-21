@@ -7,9 +7,8 @@ permalink: /deny/
 This page shows the `cargo-deny` report summary for the last commit
 on the `master` branch of the project (as of
 <a href="https://github.com/matthiasbeyer/actions-to-website/commit/{{ site.data.denyreport.gitrev }}">
-    {{ site.data.denyreport.shortrev }}
-</a>
-).
+    {{- site.data.denyreport.shortrev -}}
+</a>).
 
 <table border="1">
     <tr>
