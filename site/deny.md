@@ -42,7 +42,7 @@ on the `master` branch of the project.
         {% if report.type == "summary" %}
         <tr>
             <td>
-                <a href="https://github.com/matthiasbeyer/actions-to-website/commit/{{ object[1].rev }}">
+                <a href="https://github.com/matthiasbeyer/actions-to-website/commit/{{ object[1].gitrev }}">
                     {{ object[1].shortrev }}
                 </a>
             </td>
