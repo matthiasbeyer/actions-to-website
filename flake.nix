@@ -196,6 +196,20 @@
               '';
             };
           };
+
+          outdatedReport = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "outdatedReport";
+              runtimeInputs = [
+                inputs.self.packages."${system}".createOutdatedReport
+              ];
+
+              text = ''
+                mkdir -p site/_data
+                createOutdatedReport > "site/_data/outdated.json"
+              '';
+            };
+          };
         };
 
         devShells.default = pkgs.mkShell {
