@@ -71,6 +71,9 @@ jobs:
           nix --extra-experimental-features "nix-command flakes" build .#coverageLinkList
           PATH=./result/bin:$PATH bash ./scripts/update_coverage_list.sh
 
+      - name: Build deny report for master
+        run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#denyReport
+
       - name: Build site
         run: nix --extra-experimental-features "nix-command flakes" run .#buildSite
 

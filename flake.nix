@@ -34,7 +34,9 @@
             callPackage
             craneLib
             src
-            version;
+            version
+            rustTarget
+            ;
 
             selfPackages = inputs.self.packages."${system}";
         });
@@ -167,6 +169,33 @@
               '';
             };
           };
+
+          serveSite = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "buildSite";
+              runtimeInputs = [ packages.gems ];
+
+              text = ''
+                cd site
+                jekyll serve --destination ../public
+              '';
+            };
+          };
+
+          denyReport = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "denyReport";
+              runtimeInputs = [
+                pkgs.git
+                inputs.self.packages."${system}".createDenyReport
+              ];
+
+              text = ''
+                mkdir -p site/_data
+                createDenyReport > "site/_data/denyreport.json"
+              '';
+            };
+          };
         };
 
         devShells.default = pkgs.mkShell {
@@ -178,6 +207,7 @@
             rustTarget
 
             pkgs.cargo-llvm-cov
+            pkgs.cargo-deny
 
             pkgs.gitlint
             packages.gems
