@@ -170,6 +170,18 @@
             };
           };
 
+          serveSite = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "buildSite";
+              runtimeInputs = [ packages.gems ];
+
+              text = ''
+                cd site
+                jekyll serve --destination ../public
+              '';
+            };
+          };
+
           denyReport = inputs.flake-utils.lib.mkApp {
             drv = pkgs.writeShellApplication {
               name = "denyReport";
