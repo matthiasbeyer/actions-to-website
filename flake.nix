@@ -180,7 +180,6 @@
 
               text = ''
                 mkdir -p site/_data
-                commit="$(git rev-parse HEAD)"
                 createDenyReport > "site/_data/denyreport.json"
               '';
             };
