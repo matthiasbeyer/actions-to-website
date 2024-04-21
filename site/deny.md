@@ -47,7 +47,6 @@ on the `master` branch of the project.
 
         {% assign summary = site.data.denyreport.data | where: "type", "summary" | first %}
 
-        <td
         <td style="background-color: {%- if summary.fields.advisories.errors > 0 -%}#FE2D00{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.errors }}</td>
         <td style="background-color: {%- if summary.fields.advisories.warnings > 0 -%}#F3FF00{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.warnings }}</td>
         <td style="background-color: {%- if summary.fields.advisories.notes > 0 -%}#D6EEEE{%- else -%}#00000{%- endif -%};">{{ summary.fields.advisories.notes }}</td>
