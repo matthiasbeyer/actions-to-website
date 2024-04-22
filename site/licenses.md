@@ -24,7 +24,7 @@ on the `master` branch of the project (as of
 
     {% for license in licenses %}
         <tr>
-            <td><a href="{{ license.repository }}">{{ license.name }}</a></th>
+            <td><a href="{{ license.repository }}">{{ license.name }}</a></td>
             <td>{{ license.version }}</td>
             <td>{{ license.license }}</td>
             <td>{{ license.authors }}</td>
