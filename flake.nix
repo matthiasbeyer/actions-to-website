@@ -210,6 +210,21 @@
               '';
             };
           };
+
+          licenseReport = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "licenseReport";
+              runtimeInputs = [
+                pkgs.git
+                inputs.self.packages."${system}".createLicenseReport
+              ];
+
+              text = ''
+                mkdir -p site/_data
+                createLicenseReport > "site/_data/licenses.json"
+              '';
+            };
+          };
         };
 
         devShells.default = pkgs.mkShell {
