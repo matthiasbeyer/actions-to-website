@@ -30,7 +30,7 @@ jobs:
       - uses: DeterminateSystems/flake-checker-action@main
 
       - name: Build public-api diff report for PR
-        run: nix --extra-experimental-features "nix-command flakes" develop .#pa -c cargo-public-api --color=never diff master..HEAD > 'public-api-diff.txt'
+        run: nix --extra-experimental-features "nix-command flakes" develop .#pa -c cargo-public-api --color=never diff origin/master..HEAD > 'public-api-diff.txt'
 
       - name: Comment public-api diff to PR
         uses: peter-evans/create-or-update-comment@v4
