@@ -1,3 +1,3 @@
-pub fn bar(_: usize) -> f32 {
+pub fn foo() -> String {
     unimplemented!()
 }

@@ -45,8 +45,11 @@
           inherit system;
         };
 
-        nightlyRustTarget = pkgs.rust-bin.selectLatestNightlyWith (toolchain:
-          pkgs.rust-bin.fromRustupToolchain { channel = "nightly-2024-02-07"; components = [ "rustfmt" ]; });
+        nightlyRustToolchain = pkgs.rust-bin.fromRustupToolchain {
+          channel = "nightly-2024-02-07";
+          components = [ "rustfmt" ];
+        };
+        nightlyRustTarget = pkgs.rust-bin.selectLatestNightlyWith (toolchain: nightlyRustToolchain);
         nightlyCraneLib = (inputs.crane.mkLib pkgs).overrideToolchain nightlyRustTarget;
 
         rustTarget = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
@@ -241,6 +244,14 @@
 
             pkgs.gitlint
             packages.gems
+          ];
+        };
+
+        devShells.pa = pkgs.mkShell {
+          nativeBuildInputs = [
+            nightlyRustToolchain
+            unstable.rustup
+            unstable.cargo-public-api
           ];
         };
       }
