@@ -1,0 +1,37 @@
+name: bloat diff on branch
+
+on:
+  pull_request:
+    types:
+      - labeled
+      - synchronize
+      - opened
+      - reopened
+    branches:
+      - master
+
+jobs:
+  bloat-branch:
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'generate-bloat-diff') ||
+      github.event.label.name == 'generate-bloat-diff'
+    permissions:
+      contents: write
+      pull-requests: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Run cargo bloat
+        uses: orf/cargo-bloat-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
