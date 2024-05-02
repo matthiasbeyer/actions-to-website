@@ -245,6 +245,9 @@
 
             pkgs.gitlint
             packages.gems
+
+            pkgs.ruby
+            packages.rubyCharty
           ];
         };
 
