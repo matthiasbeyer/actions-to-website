@@ -12,8 +12,6 @@ jobs:
   site-coverage-master:
     permissions:
       contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/master'
     steps:
@@ -43,8 +41,6 @@ jobs:
   site-bloat-master:
     permissions:
       contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/master'
     steps:
@@ -73,8 +69,6 @@ jobs:
       - site-coverage-master
     permissions:
       contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
