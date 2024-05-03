@@ -20,8 +20,7 @@ module GitHelpers
       .reject &:nil?
   end
 
-  def cargo_bloat
-    repo = load_repo
+  def cargo_bloat repo
     walker = walker_for_first_parent repo
 
     git_notes(walker, "refs/notes/cargo-bloat-report").map do |note|
