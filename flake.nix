@@ -103,10 +103,14 @@
           esac
         '';
 
-        site = callPackage ./site {};
+         gems = pkgs.bundlerEnv {
+          name = "site";
+          gemdir = ./site;
+        };
+
         scripts = callPackage ./scripts {};
       in
-      rec {
+      {
         checks = {
           inherit package;
 
@@ -126,9 +130,7 @@
               pkgs.coreutils
             ];
           };
-        }
-        // site.checks
-        ;
+        };
 
         packages = rec {
           default = package;
@@ -156,35 +158,10 @@
             cargoLlvmCovExtraArgs = "--lcov --output-path $out/lcov";
           };
         }
-        // site.packages
         // scripts.packages
         ;
 
         apps = {
-          buildSite = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "buildSite";
-              runtimeInputs = [ packages.gems ];
-
-              text = ''
-                cd site
-                jekyll build --destination ../public
-              '';
-            };
-          };
-
-          serveSite = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "buildSite";
-              runtimeInputs = [ packages.gems ];
-
-              text = ''
-                cd site
-                jekyll serve --destination ../public
-              '';
-            };
-          };
-
           denyReport = inputs.flake-utils.lib.mkApp {
             drv = pkgs.writeShellApplication {
               name = "denyReport";
@@ -244,7 +221,8 @@
             pkgs.cargo-bloat
 
             pkgs.gitlint
-            packages.gems
+            gems
+            gems.wrappedRuby
           ];
         };
 
