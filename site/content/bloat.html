@@ -1,0 +1,24 @@
+---
+title: cargo-bloat report
+---
+
+<% cargo_bloat.map do |obj| %>
+    <ul>
+        <li>Revision: <%= obj["gitrev"] %></li>
+        <li>file-size: <%= obj["data"]["file-size"] %></li>
+        <li>text-section-size: <%= obj["data"]["text-section-size"] %></li>
+    </ul>
+    <table>
+        <tr>
+            <th>crate</th>
+            <th>size</th>
+        </tr>
+
+        <% obj["data"]["crates"].map do |crate| %>
+            <tr>
+                <td><%= crate["name"] %></td>
+                <td><%= crate["size"] %></td>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
