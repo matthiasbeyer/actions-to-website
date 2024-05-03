@@ -5,3 +5,4 @@ source "https://rubygems.org"
 gem "nanoc"
 gem "adsf"
 gem "webrick"
+gem "rugged", '~> 1.1.0'

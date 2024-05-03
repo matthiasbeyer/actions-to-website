@@ -281,6 +281,16 @@
     };
     version = "0.4.6";
   };
+  rugged = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1dld1z2mdnsf9i4fs74zdr6rfk75pkgzvvyxask5w2dsmkj7bb4m";
+      type = "gem";
+    };
+    version = "1.1.1";
+  };
   set = {
     groups = ["default"];
     platforms = [];
