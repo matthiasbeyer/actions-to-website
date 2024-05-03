@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 compile '/**/*.html' do
+  filter :erb
   layout '/default.*'
 
   if item.identifier =~ '**/index.*'
