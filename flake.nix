@@ -205,6 +205,32 @@
               '';
             };
           };
+
+          buildSite = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "buildSite";
+              runtimeInputs = [ gems gems.wrappedRuby ];
+
+              text = ''
+                pushd site
+                nanoc
+                popd
+              '';
+            };
+          };
+
+          serveSite = inputs.flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "buildSite";
+              runtimeInputs = [ gems gems.wrappedRuby ];
+
+              text = ''
+                pushd site
+                nanoc view
+                popd
+              '';
+            };
+          };
         };
 
         devShells.default = pkgs.mkShell {
