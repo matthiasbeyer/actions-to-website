@@ -9,7 +9,12 @@ module GitHelpers
   def walker_for_first_parent repo, master="master"
     walker = Rugged::Walker.new(repo)
     walker.simplify_first_parent
-    walker.push repo.branches[master].target.oid
+    begin
+      branch = repo.branches[master].target.oid
+    rescue NoMethodError
+      branch = repo.branches["origin/#{master}"].target.oid
+    end
+    walker.push branch
     walker
   end
 
