@@ -103,7 +103,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public/
+          publish_dir: ./site/output
           keep_files: true
           commit_message: Deploy website from commit ${{ github.event.head_commit.after }}
 
