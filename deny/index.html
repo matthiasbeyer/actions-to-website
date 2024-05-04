@@ -1,403 +1,150 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
     <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>cargo-deny reports - This is an example</title>
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="This is an example">
-<meta property="og:title" content="cargo-deny reports">
-<meta property="og:url" content="/actions-to-website/deny/">
-
-
-  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="canonical" href="/actions-to-website/deny/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "/actions-to-website/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-
-  <link href="/actions-to-website/feed.xml" type="application/atom+xml" rel="alternate" title="This is an example Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/actions-to-website/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/actions-to-website/">
-          This is an example
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name"></h3>
-    
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
+    <title>actions-to-website: cargo-deny report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+    <meta name="generator" content="Nanoc 4.12.21">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+    <body>
+        <section class="section">
+            <aside class="menu">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+        <li><a>Github</a></li>
+        <li><a>Documentation</a></li>
     </ul>
-  </div>
-</div>
 
-  
-  </div>
+    <p class="menu-label">Administration</p>
+    <ul class="menu-list">
+        <li><a>CI</a></li>
+
+        <li>Project statistics</li>
+        <li>
+            <a>Coverage Report</a>
+            <a>Deny Report</a>
+            <a>Used licenses</a>
+        </li>
+    </ul>
+</aside>
+
+
+            <div class="container">
+                
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="cargo-deny reports">
+
+
+<p>
+    Generated for revision
+    <a href="https://github.com/matthiasbeyer/actions-to-website/commit/cb8a22b3bfbd1d863da1c195b4e3075c4180550b">cb8a22b3bfb</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="4">Advisories</th>
+            <th colspan="4">Bans</th>
+            <th colspan="4">Licenses</th>
+            <th colspan="4">Sources</th>
+        </tr>
+        <tr>
+            
+                
+                    <th>errors</th>
+                
+                    <th>warnings</th>
+                
+                    <th>notes</th>
+                
+                    <th>helps</th>
+                
+            
+                
+                    <th>errors</th>
+                
+                    <th>warnings</th>
+                
+                    <th>notes</th>
+                
+                    <th>helps</th>
+                
+            
+                
+                    <th>errors</th>
+                
+                    <th>warnings</th>
+                
+                    <th>notes</th>
+                
+                    <th>helps</th>
+                
+            
+                
+                    <th>errors</th>
+                
+                    <th>warnings</th>
+                
+                    <th>notes</th>
+                
+                    <th>helps</th>
+                
+            
+        </tr>
+    </thead>
+
+    <tbody>
     
     
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">cargo-deny reports
-</h1>
-          
-
-
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
         
-        <p>This page shows the <code class="language-plaintext highlighter-rouge">cargo-deny</code> report summary for the last commit
-on the <code class="language-plaintext highlighter-rouge">master</code> branch of the project (as of
-<a href="https://github.com/matthiasbeyer/actions-to-website/commit/f97a2bb82bdbfcd92ed1387983a42a368e236877">f97a2bb82bd</a>).</p>
-
-<table border="1">
-    <tr>
-        <th></th>
-        <th colspan="4">Advisories</th>
-        <th colspan="4">Bans</th>
-        <th colspan="4">Licenses</th>
-        <th colspan="4">Sources</th>
-    </tr>
-    <tr>
-        <th>Commit</th>
-
-        <th>E</th>
-        <th>W</th>
-        <th>N</th>
-        <th>H</th>
-
-        <th>E</th>
-        <th>W</th>
-        <th>N</th>
-        <th>H</th>
-
-        <th>E</th>
-        <th>W</th>
-        <th>N</th>
-        <th>H</th>
-
-        <th>E</th>
-        <th>W</th>
-        <th>N</th>
-        <th>H</th>
-    </tr>
-    <tr>
-        <td>
-            <a href="https://github.com/matthiasbeyer/actions-to-website/commit/f97a2bb82bdbfcd92ed1387983a42a368e236877">
-                f97a2bb82bd
-            </a>
-        </td>
-
+            <td>0</td>
         
-
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#F3FF00;">1</td>
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#00000;">0</td>
-
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#F3FF00;">1</td>
-        <td style="background-color:#D6EEEE;">10</td>
-        <td style="background-color:#00000;">0</td>
-
-        <td style="background-color:#FE2D00;">1</td>
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#D6EEEE;">69</td>
-
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#00000;">0</td>
-        <td style="background-color:#00000;">0</td>
-    </tr>
+            <td>5</td>
+        
+            <td>0</td>
+        
+            <td>0</td>
+        
+    
+        
+            <td>0</td>
+        
+            <td>1</td>
+        
+            <td>10</td>
+        
+            <td>0</td>
+        
+    
+        
+            <td>1</td>
+        
+            <td>0</td>
+        
+            <td>0</td>
+        
+            <td>69</td>
+        
+    
+        
+            <td>0</td>
+        
+            <td>0</td>
+        
+            <td>0</td>
+        
+            <td>0</td>
+        
+    
+    </tbody>
 </table>
 
-<h1 id="diagnostics">Diagnostics</h1>
 
-<p>The following diagnostics were found.</p>
-
-<p>For details see the last build in the
-<a href="https://github.com/matthiasbeyer/actions-to-website">github repository</a>.</p>
-
-<h2 id="errors">Errors</h2>
-
-<ul>
-
-        <li>actions-to-website = 0.1.0 is unlicensed</li>
-    
-
-
-
-</ul>
-
-<h2 id="warnings">Warnings</h2>
-
-<ul>
-
-
-        <li>skip tree root was not found in the dependency graph</li>
-    
-
-        <li>yaml-rust is unmaintained.</li>
-    
-
-</ul>
-
-<p>For more information, see the
-<a href="https://github.com/matthiasbeyer/actions-to-website">github repository</a>.</p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-
-      </footer>
-
-      
-
-      
-    </div>
-
-    
-  </article>
-
-  
-  
-</div>
-
-    </div>
-
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-
-    
-
-    
-      <li><a href="/actions-to-website/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-    
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2024 This is an example. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/actions-to-website/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-  </body>
+            </div>
+        </section>
+    </body>
 </html>

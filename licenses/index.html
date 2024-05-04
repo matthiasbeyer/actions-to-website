@@ -1,814 +1,555 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
     <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>cargo-license report - This is an example</title>
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="This is an example">
-<meta property="og:title" content="cargo-license report">
-<meta property="og:url" content="/actions-to-website/licenses/">
-
-
-  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="canonical" href="/actions-to-website/licenses/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "/actions-to-website/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-
-  <link href="/actions-to-website/feed.xml" type="application/atom+xml" rel="alternate" title="This is an example Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/actions-to-website/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/actions-to-website/">
-          This is an example
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name"></h3>
-    
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
+    <title>actions-to-website: cargo-license report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+    <meta name="generator" content="Nanoc 4.12.21">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+    <body>
+        <section class="section">
+            <aside class="menu">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+        <li><a>Github</a></li>
+        <li><a>Documentation</a></li>
     </ul>
-  </div>
-</div>
 
-  
-  </div>
+    <p class="menu-label">Administration</p>
+    <ul class="menu-list">
+        <li><a>CI</a></li>
 
-
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="cargo-license report">
-    
-    
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">cargo-license report
-</h1>
-          
+        <li>Project statistics</li>
+        <li>
+            <a>Coverage Report</a>
+            <a>Deny Report</a>
+            <a>Used licenses</a>
+        </li>
+    </ul>
+</aside>
 
 
-        </header>
-      
+            <div class="container">
+                
 
-      <section class="page__content" itemprop="text">
+
+
+
+
+<p>
+    Generated for revision
+    <a href="https://github.com/matthiasbeyer/actions-to-website/commit/cb8a22b3bfbd1d863da1c195b4e3075c4180550b">cb8a22b3bfb</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Crate</th>
+            <th>Version</th>
+            <th>License</th>
+            <th>Author(s)</th>
+        </tr>
+    </thead>
+
+    <tbody>
         
-        <p>This page shows the <code class="language-plaintext highlighter-rouge">cargo-licenses</code> report for the last commit
-on the <code class="language-plaintext highlighter-rouge">master</code> branch of the project (as of
-<a href="https://github.com/matthiasbeyer/actions-to-website/commit/f97a2bb82bdbfcd92ed1387983a42a368e236877">f97a2bb82bd</a>).</p>
-
-<h2 id="crate">Crate</h2>
-
-<table>
-    <tr>
-        <th>Dependency</th>
-        <th>Version</th>
-        <th>License</th>
-        <th>Author(s)</th>
-    </tr>
-
-    
-        <tr>
-            <td><a href="">actions-to-website</a></td>
-            <td>0.1.0</td>
-            <td></td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/tkaitchuck/ahash">ahash</a></td>
-            <td>0.7.8</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Tom Kaitchuck &lt;Tom.Kaitchuck@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-cli/anstyle.git">anstream</a></td>
-            <td>0.6.13</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-cli/anstyle.git">anstyle</a></td>
-            <td>1.0.6</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-cli/anstyle.git">anstyle-parse</a></td>
-            <td>0.2.3</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-cli/anstyle">anstyle-query</a></td>
-            <td>1.0.2</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-cli/anstyle.git">anstyle-wincon</a></td>
-            <td>3.0.2</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/async-trait">async-trait</a></td>
-            <td>0.1.80</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/marshallpierce/rust-base64">base64</a></td>
-            <td>0.13.1</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Alice Maz &lt;alice@alicemaz.com&gt;|Marshall Pierce &lt;marshall@mpierce.org&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/bitflags/bitflags">bitflags</a></td>
-            <td>1.3.2</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>The Rust Project Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/RustCrypto/utils">block-buffer</a></td>
-            <td>0.10.4</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>RustCrypto Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/alexcrichton/cfg-if">cfg-if</a></td>
-            <td>1.0.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Alex Crichton &lt;alex@alexcrichton.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/clap-rs/clap">clap</a></td>
-            <td>4.5.4</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/clap-rs/clap">clap_builder</a></td>
-            <td>4.5.2</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/clap-rs/clap/tree/master/clap_lex">clap_lex</a></td>
-            <td>0.7.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-cli/anstyle">colorchoice</a></td>
-            <td>1.0.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/mehcode/config-rs">config</a></td>
-            <td>0.13.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Ryan Leckey &lt;leckey.ryan@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/RustCrypto/utils">cpufeatures</a></td>
-            <td>0.2.12</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>RustCrypto Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/RustCrypto/traits">crypto-common</a></td>
-            <td>0.1.6</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>RustCrypto Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/RustCrypto/traits">digest</a></td>
-            <td>0.10.7</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>RustCrypto Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/sgodwincs/dlv-list-rs">dlv-list</a></td>
-            <td>0.3.0</td>
-            <td>MIT</td>
-            <td>Scott Godwin &lt;sgodwincs@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/fizyk20/generic-array.git">generic-array</a></td>
-            <td>0.14.7</td>
-            <td>MIT</td>
-            <td>Bartłomiej Kamiński &lt;fizyk20@gmail.com&gt;|Aaron Trent &lt;novacrazy@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-random/getrandom">getrandom</a></td>
-            <td>0.2.14</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>The Rand Project Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-lang/hashbrown">hashbrown</a></td>
-            <td>0.12.3</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Amanieu d'Antras &lt;amanieu@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/itoa">itoa</a></td>
-            <td>1.0.11</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/callum-oakley/json5-rs">json5</a></td>
-            <td>0.4.1</td>
-            <td>ISC</td>
-            <td>Callum Oakley &lt;hello@callumoakley.net&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-lang-nursery/lazy-static.rs">lazy_static</a></td>
-            <td>1.4.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Marvin Löbel &lt;loebel.marvin@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rust-lang/libc">libc</a></td>
-            <td>0.2.153</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>The Rust Project Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/contain-rs/linked-hash-map">linked-hash-map</a></td>
-            <td>0.5.6</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Stepan Koltsov &lt;stepan.koltsov@gmail.com&gt;|Andrew Paseltiner &lt;apaseltiner@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/BurntSushi/memchr">memchr</a></td>
-            <td>2.7.2</td>
-            <td>MIT OR Unlicense</td>
-            <td>Andrew Gallant &lt;jamslam@gmail.com&gt;|bluss</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/Alexhuszagh/minimal-lexical">minimal-lexical</a></td>
-            <td>0.2.1</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Alex Huszagh &lt;ahuszagh@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/Geal/nom">nom</a></td>
-            <td>7.1.3</td>
-            <td>MIT</td>
-            <td>contact@geoffroycouprie.com</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/matklad/once_cell">once_cell</a></td>
-            <td>1.19.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Aleksey Kladov &lt;aleksey.kladov@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/sgodwincs/ordered-multimap-rs">ordered-multimap</a></td>
-            <td>0.4.3</td>
-            <td>MIT</td>
-            <td>Scott Godwin &lt;sgodwincs@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/Manishearth/pathdiff">pathdiff</a></td>
-            <td>0.2.1</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Manish Goregaokar &lt;manishsmail@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/pest-parser/pest">pest</a></td>
-            <td>2.7.9</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Dragoș Tiselice &lt;dragostiselice@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/pest-parser/pest">pest_derive</a></td>
-            <td>2.7.9</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Dragoș Tiselice &lt;dragostiselice@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/pest-parser/pest">pest_generator</a></td>
-            <td>2.7.9</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Dragoș Tiselice &lt;dragostiselice@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/pest-parser/pest">pest_meta</a></td>
-            <td>2.7.9</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Dragoș Tiselice &lt;dragostiselice@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/proc-macro2">proc-macro2</a></td>
-            <td>1.0.81</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;|Alex Crichton &lt;alex@alexcrichton.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/quote">quote</a></td>
-            <td>1.0.36</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/ron-rs/ron">ron</a></td>
-            <td>0.7.1</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Christopher Durham &lt;cad97@cad97.com&gt;|Dzmitry Malyshau &lt;kvarkus@gmail.com&gt;|Thomas Schaller &lt;torkleyy@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/zonyitoo/rust-ini">rust-ini</a></td>
-            <td>0.18.0</td>
-            <td>MIT</td>
-            <td>Y. T. Chung &lt;zonyitoo@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/ryu">ryu</a></td>
-            <td>1.0.17</td>
-            <td>Apache-2.0 OR BSL-1.0</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/serde-rs/serde">serde</a></td>
-            <td>1.0.198</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Erick Tryzelaar &lt;erick.tryzelaar@gmail.com&gt;|David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/serde-rs/serde">serde_derive</a></td>
-            <td>1.0.198</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Erick Tryzelaar &lt;erick.tryzelaar@gmail.com&gt;|David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/serde-rs/json">serde_json</a></td>
-            <td>1.0.116</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Erick Tryzelaar &lt;erick.tryzelaar@gmail.com&gt;|David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/RustCrypto/hashes">sha2</a></td>
-            <td>0.10.8</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>RustCrypto Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/rapidfuzz/strsim-rs">strsim</a></td>
-            <td>0.11.1</td>
-            <td>MIT</td>
-            <td>Danny Guo &lt;danny@dannyguo.com&gt;|maxbachmann &lt;oss@maxbachmann.de&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/syn">syn</a></td>
-            <td>2.0.60</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/thiserror">thiserror</a></td>
-            <td>1.0.59</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/thiserror">thiserror-impl</a></td>
-            <td>1.0.59</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/toml-rs/toml">toml</a></td>
-            <td>0.5.11</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Alex Crichton &lt;alex@alexcrichton.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/paholg/typenum">typenum</a></td>
-            <td>1.17.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Paho Lurie-Gregg &lt;paho@paholg.com&gt;|Andre Bogus &lt;bogusandre@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/BurntSushi/ucd-generate">ucd-trie</a></td>
-            <td>0.1.6</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Andrew Gallant &lt;jamslam@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/dtolnay/unicode-ident">unicode-ident</a></td>
-            <td>1.0.12</td>
-            <td>(MIT OR Apache-2.0) AND Unicode-DFS-2016</td>
-            <td>David Tolnay &lt;dtolnay@gmail.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/alacritty/vte">utf8parse</a></td>
-            <td>0.2.1</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Joe Wilm &lt;joe@jwilm.com&gt;|Christian Duerr &lt;contact@christianduerr.com&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/SergioBenitez/version_check">version_check</a></td>
-            <td>0.9.4</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Sergio Benitez &lt;sb@sergio.bz&gt;</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/bytecodealliance/wasi">wasi</a></td>
-            <td>0.11.0+wasi-snapshot-preview1</td>
-            <td>Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT</td>
-            <td>The Cranelift Project Developers</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows-sys</a></td>
-            <td>0.52.0</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows-targets</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_aarch64_gnullvm</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_aarch64_msvc</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_i686_gnu</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_i686_gnullvm</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_i686_msvc</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_x86_64_gnu</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_x86_64_gnullvm</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/microsoft/windows-rs">windows_x86_64_msvc</a></td>
-            <td>0.52.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Microsoft</td>
-        </tr>
-    
-        <tr>
-            <td><a href="https://github.com/chyh1990/yaml-rust">yaml-rust</a></td>
-            <td>0.4.5</td>
-            <td>Apache-2.0 OR MIT</td>
-            <td>Yuheng Chen &lt;yuhengchen@sensetime.com&gt;</td>
-        </tr>
-    
+            <tr>
+                <td>actions-to-website</td>
+                <td>0.1.0</td>
+                <td></td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>ahash</td>
+                <td>0.7.8</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Tom Kaitchuck <Tom.Kaitchuck@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>anstream</td>
+                <td>0.6.13</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>anstyle</td>
+                <td>1.0.6</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>anstyle-parse</td>
+                <td>0.2.3</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>anstyle-query</td>
+                <td>1.0.2</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>anstyle-wincon</td>
+                <td>3.0.2</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>async-trait</td>
+                <td>0.1.80</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>base64</td>
+                <td>0.13.1</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Alice Maz <alice@alicemaz.com>|Marshall Pierce <marshall@mpierce.org></td>
+            </tr>
+        
+            <tr>
+                <td>bitflags</td>
+                <td>1.3.2</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>The Rust Project Developers</td>
+            </tr>
+        
+            <tr>
+                <td>block-buffer</td>
+                <td>0.10.4</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>RustCrypto Developers</td>
+            </tr>
+        
+            <tr>
+                <td>cfg-if</td>
+                <td>1.0.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Alex Crichton <alex@alexcrichton.com></td>
+            </tr>
+        
+            <tr>
+                <td>clap</td>
+                <td>4.5.4</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>clap_builder</td>
+                <td>4.5.2</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>clap_lex</td>
+                <td>0.7.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>colorchoice</td>
+                <td>1.0.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td></td>
+            </tr>
+        
+            <tr>
+                <td>config</td>
+                <td>0.13.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Ryan Leckey <leckey.ryan@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>cpufeatures</td>
+                <td>0.2.12</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>RustCrypto Developers</td>
+            </tr>
+        
+            <tr>
+                <td>crypto-common</td>
+                <td>0.1.6</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>RustCrypto Developers</td>
+            </tr>
+        
+            <tr>
+                <td>digest</td>
+                <td>0.10.7</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>RustCrypto Developers</td>
+            </tr>
+        
+            <tr>
+                <td>dlv-list</td>
+                <td>0.3.0</td>
+                <td>MIT</td>
+                <td>Scott Godwin <sgodwincs@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>generic-array</td>
+                <td>0.14.7</td>
+                <td>MIT</td>
+                <td>Bartłomiej Kamiński <fizyk20@gmail.com>|Aaron Trent <novacrazy@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>getrandom</td>
+                <td>0.2.14</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>The Rand Project Developers</td>
+            </tr>
+        
+            <tr>
+                <td>hashbrown</td>
+                <td>0.12.3</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Amanieu d'Antras <amanieu@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>itoa</td>
+                <td>1.0.11</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>json5</td>
+                <td>0.4.1</td>
+                <td>ISC</td>
+                <td>Callum Oakley <hello@callumoakley.net></td>
+            </tr>
+        
+            <tr>
+                <td>lazy_static</td>
+                <td>1.4.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Marvin Löbel <loebel.marvin@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>libc</td>
+                <td>0.2.153</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>The Rust Project Developers</td>
+            </tr>
+        
+            <tr>
+                <td>linked-hash-map</td>
+                <td>0.5.6</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Stepan Koltsov <stepan.koltsov@gmail.com>|Andrew Paseltiner <apaseltiner@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>memchr</td>
+                <td>2.7.2</td>
+                <td>MIT OR Unlicense</td>
+                <td>Andrew Gallant <jamslam@gmail.com>|bluss</td>
+            </tr>
+        
+            <tr>
+                <td>minimal-lexical</td>
+                <td>0.2.1</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Alex Huszagh <ahuszagh@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>nom</td>
+                <td>7.1.3</td>
+                <td>MIT</td>
+                <td>contact@geoffroycouprie.com</td>
+            </tr>
+        
+            <tr>
+                <td>once_cell</td>
+                <td>1.19.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Aleksey Kladov <aleksey.kladov@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>ordered-multimap</td>
+                <td>0.4.3</td>
+                <td>MIT</td>
+                <td>Scott Godwin <sgodwincs@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>pathdiff</td>
+                <td>0.2.1</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Manish Goregaokar <manishsmail@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>pest</td>
+                <td>2.7.9</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Dragoș Tiselice <dragostiselice@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>pest_derive</td>
+                <td>2.7.9</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Dragoș Tiselice <dragostiselice@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>pest_generator</td>
+                <td>2.7.9</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Dragoș Tiselice <dragostiselice@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>pest_meta</td>
+                <td>2.7.9</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Dragoș Tiselice <dragostiselice@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>proc-macro2</td>
+                <td>1.0.81</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com>|Alex Crichton <alex@alexcrichton.com></td>
+            </tr>
+        
+            <tr>
+                <td>quote</td>
+                <td>1.0.36</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>ron</td>
+                <td>0.7.1</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Christopher Durham <cad97@cad97.com>|Dzmitry Malyshau <kvarkus@gmail.com>|Thomas Schaller <torkleyy@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>rust-ini</td>
+                <td>0.18.0</td>
+                <td>MIT</td>
+                <td>Y. T. Chung <zonyitoo@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>ryu</td>
+                <td>1.0.17</td>
+                <td>Apache-2.0 OR BSL-1.0</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>serde</td>
+                <td>1.0.198</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>serde_derive</td>
+                <td>1.0.198</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>serde_json</td>
+                <td>1.0.116</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>sha2</td>
+                <td>0.10.8</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>RustCrypto Developers</td>
+            </tr>
+        
+            <tr>
+                <td>strsim</td>
+                <td>0.11.1</td>
+                <td>MIT</td>
+                <td>Danny Guo <danny@dannyguo.com>|maxbachmann <oss@maxbachmann.de></td>
+            </tr>
+        
+            <tr>
+                <td>syn</td>
+                <td>2.0.60</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>thiserror</td>
+                <td>1.0.59</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>thiserror-impl</td>
+                <td>1.0.59</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>toml</td>
+                <td>0.5.11</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Alex Crichton <alex@alexcrichton.com></td>
+            </tr>
+        
+            <tr>
+                <td>typenum</td>
+                <td>1.17.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Paho Lurie-Gregg <paho@paholg.com>|Andre Bogus <bogusandre@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>ucd-trie</td>
+                <td>0.1.6</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Andrew Gallant <jamslam@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>unicode-ident</td>
+                <td>1.0.12</td>
+                <td>(MIT OR Apache-2.0) AND Unicode-DFS-2016</td>
+                <td>David Tolnay <dtolnay@gmail.com></td>
+            </tr>
+        
+            <tr>
+                <td>utf8parse</td>
+                <td>0.2.1</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Joe Wilm <joe@jwilm.com>|Christian Duerr <contact@christianduerr.com></td>
+            </tr>
+        
+            <tr>
+                <td>version_check</td>
+                <td>0.9.4</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Sergio Benitez <sb@sergio.bz></td>
+            </tr>
+        
+            <tr>
+                <td>wasi</td>
+                <td>0.11.0+wasi-snapshot-preview1</td>
+                <td>Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT</td>
+                <td>The Cranelift Project Developers</td>
+            </tr>
+        
+            <tr>
+                <td>windows-sys</td>
+                <td>0.52.0</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows-targets</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_aarch64_gnullvm</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_aarch64_msvc</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_i686_gnu</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_i686_gnullvm</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_i686_msvc</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_x86_64_gnu</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_x86_64_gnullvm</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>windows_x86_64_msvc</td>
+                <td>0.52.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Microsoft</td>
+            </tr>
+        
+            <tr>
+                <td>yaml-rust</td>
+                <td>0.4.5</td>
+                <td>Apache-2.0 OR MIT</td>
+                <td>Yuheng Chen <yuhengchen@sensetime.com></td>
+            </tr>
+        
+    </tbody>
 </table>
 
-<p>For more information, see the
-<a href="https://github.com/matthiasbeyer/actions-to-website">github repository</a>.</p>
-
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-
-      </footer>
-
-      
-
-      
-    </div>
-
-    
-  </article>
-
-  
-  
-</div>
-
-    </div>
-
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-
-    
-
-    
-      <li><a href="/actions-to-website/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-    
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2024 This is an example. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/actions-to-website/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-  </body>
+            </div>
+        </section>
+    </body>
 </html>

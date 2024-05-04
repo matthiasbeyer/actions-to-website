@@ -1,529 +1,371 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
     <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>cargo-outdated report - This is an example</title>
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="This is an example">
-<meta property="og:title" content="cargo-outdated report">
-<meta property="og:url" content="/actions-to-website/outdated/">
-
-
-  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="canonical" href="/actions-to-website/outdated/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": null,
-      "url": "/actions-to-website/"
-    
-  }
-</script>
-
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-
-  <link href="/actions-to-website/feed.xml" type="application/atom+xml" rel="alternate" title="This is an example Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/actions-to-website/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/actions-to-website/">
-          This is an example
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name"></h3>
-    
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
+    <title>actions-to-website: cargo-outdated report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+    <meta name="generator" content="Nanoc 4.12.21">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+    <body>
+        <section class="section">
+            <aside class="menu">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+        <li><a>Github</a></li>
+        <li><a>Documentation</a></li>
     </ul>
-  </div>
-</div>
 
-  
-  </div>
+    <p class="menu-label">Administration</p>
+    <ul class="menu-list">
+        <li><a>CI</a></li>
 
-
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="cargo-outdated report">
-    
-    
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">cargo-outdated report
-</h1>
-          
+        <li>Project statistics</li>
+        <li>
+            <a>Coverage Report</a>
+            <a>Deny Report</a>
+            <a>Used licenses</a>
+        </li>
+    </ul>
+</aside>
 
 
-        </header>
-      
+            <div class="container">
+                
 
-      <section class="page__content" itemprop="text">
+
+
+
+
+<p>
+    Generated for revision
+    <a href="https://github.com/matthiasbeyer/actions-to-website/commit/cb8a22b3bfbd1d863da1c195b4e3075c4180550b">cb8a22b3bfb</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Crate</th>
+            <th>Dependency</th>
+            <th>Current</th>
+            <th>Compat</th>
+            <th>Latest</th>
+        </tr>
+    </thead>
+
+    <tbody>
         
-        <p>This page shows the <code class="language-plaintext highlighter-rouge">cargo-outdated</code> report for the last commit
-on the <code class="language-plaintext highlighter-rouge">master</code> branch of the project (as of
-<a href="https://github.com/matthiasbeyer/actions-to-website/commit/f97a2bb82bdbfcd92ed1387983a42a368e236877">f97a2bb82bd</a>).</p>
-
-<h2 id="crate-actions-to-website">Crate actions-to-website</h2>
-
-<h3 id="normal-dependencies">Normal dependencies</h3>
-
-<table>
-    <tr>
-        <th>Dependency</th>
-        <th>Used</th>
-        <th>Latest</th>
-    </tr>
-
-
-    <tr>
-        <td>ahash-&gt;getrandom</td>
-        <td>0.2.14</td>
-        <td>Removed</td>
-    </tr>
-
-    <tr>
-        <td>ahash-&gt;once_cell</td>
-        <td>1.19.0</td>
-        <td>Removed</td>
-    </tr>
-
-    <tr>
-        <td>config</td>
-        <td>0.13.0</td>
-        <td>0.14.0</td>
-    </tr>
-
-    <tr>
-        <td>config-&gt;ron</td>
-        <td>0.7.1</td>
-        <td>0.8.1</td>
-    </tr>
-
-    <tr>
-        <td>config-&gt;rust-ini</td>
-        <td>0.18.0</td>
-        <td>0.19.0</td>
-    </tr>
-
-    <tr>
-        <td>config-&gt;serde</td>
-        <td>1.0.198</td>
-        <td>1.0.200</td>
-    </tr>
-
-    <tr>
-        <td>config-&gt;toml</td>
-        <td>0.5.11</td>
-        <td>0.8.12</td>
-    </tr>
-
-    <tr>
-        <td>cpufeatures-&gt;libc</td>
-        <td>0.2.153</td>
-        <td>0.2.154</td>
-    </tr>
-
-    <tr>
-        <td>getrandom-&gt;cfg-if</td>
-        <td>1.0.0</td>
-        <td>Removed</td>
-    </tr>
-
-    <tr>
-        <td>getrandom-&gt;libc</td>
-        <td>0.2.153</td>
-        <td>Removed</td>
-    </tr>
-
-    <tr>
-        <td>getrandom-&gt;wasi</td>
-        <td>0.11.0+wasi-snapshot-preview1</td>
-        <td>Removed</td>
-    </tr>
-
-    <tr>
-        <td>hashbrown-&gt;ahash</td>
-        <td>0.7.8</td>
-        <td>Removed</td>
-    </tr>
-
-    <tr>
-        <td>json5-&gt;pest</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>json5-&gt;pest_derive</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>json5-&gt;serde</td>
-        <td>1.0.198</td>
-        <td>1.0.200</td>
-    </tr>
-
-    <tr>
-        <td>ordered-multimap-&gt;dlv-list</td>
-        <td>0.3.0</td>
-        <td>0.5.2</td>
-    </tr>
-
-    <tr>
-        <td>ordered-multimap-&gt;hashbrown</td>
-        <td>0.12.3</td>
-        <td>0.13.2</td>
-    </tr>
-
-    <tr>
-        <td>pest_derive-&gt;pest</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>pest_derive-&gt;pest_generator</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>pest_generator-&gt;pest</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>pest_generator-&gt;pest_meta</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>pest_meta-&gt;pest</td>
-        <td>2.7.9</td>
-        <td>2.7.10</td>
-    </tr>
-
-    <tr>
-        <td>ron-&gt;base64</td>
-        <td>0.13.1</td>
-        <td>0.21.7</td>
-    </tr>
-
-    <tr>
-        <td>ron-&gt;bitflags</td>
-        <td>1.3.2</td>
-        <td>2.5.0</td>
-    </tr>
-
-    <tr>
-        <td>ron-&gt;serde</td>
-        <td>1.0.198</td>
-        <td>1.0.200</td>
-    </tr>
-
-    <tr>
-        <td>rust-ini-&gt;ordered-multimap</td>
-        <td>0.4.3</td>
-        <td>0.6.0</td>
-    </tr>
-
-    <tr>
-        <td>serde-&gt;serde_derive</td>
-        <td>1.0.198</td>
-        <td>1.0.200</td>
-    </tr>
-
-    <tr>
-        <td>serde_json-&gt;serde</td>
-        <td>1.0.198</td>
-        <td>1.0.200</td>
-    </tr>
-
-    <tr>
-        <td>toml-&gt;serde</td>
-        <td>1.0.198</td>
-        <td>1.0.200</td>
-    </tr>
-
+            <tr>
+                <td>actions-to-website</td>
+                <td>ahash->getrandom</td>
+                <td>0.2.14</td>
+                <td>---</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ahash->once_cell</td>
+                <td>1.19.0</td>
+                <td>---</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ahash->version_check</td>
+                <td>0.9.4</td>
+                <td>---</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>anstream->anstyle</td>
+                <td>1.0.6</td>
+                <td>1.0.7</td>
+                <td>1.0.7</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>anstream->anstyle-parse</td>
+                <td>0.2.3</td>
+                <td>0.2.4</td>
+                <td>0.2.4</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>anstream->anstyle-query</td>
+                <td>1.0.2</td>
+                <td>1.0.3</td>
+                <td>1.0.3</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>anstream->anstyle-wincon</td>
+                <td>3.0.2</td>
+                <td>3.0.3</td>
+                <td>3.0.3</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>anstream->colorchoice</td>
+                <td>1.0.0</td>
+                <td>1.0.1</td>
+                <td>1.0.1</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>anstyle-wincon->anstyle</td>
+                <td>1.0.6</td>
+                <td>1.0.7</td>
+                <td>1.0.7</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>clap_builder->anstream</td>
+                <td>0.6.13</td>
+                <td>0.6.14</td>
+                <td>0.6.14</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>clap_builder->anstyle</td>
+                <td>1.0.6</td>
+                <td>1.0.7</td>
+                <td>1.0.7</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>config</td>
+                <td>0.13.0</td>
+                <td>---</td>
+                <td>0.14.0</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>config->ron</td>
+                <td>0.7.1</td>
+                <td>---</td>
+                <td>0.8.1</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>config->rust-ini</td>
+                <td>0.18.0</td>
+                <td>---</td>
+                <td>0.19.0</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>config->serde</td>
+                <td>1.0.198</td>
+                <td>1.0.200</td>
+                <td>1.0.200</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>config->toml</td>
+                <td>0.5.11</td>
+                <td>---</td>
+                <td>0.8.12</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>cpufeatures->libc</td>
+                <td>0.2.153</td>
+                <td>0.2.154</td>
+                <td>0.2.154</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>getrandom->cfg-if</td>
+                <td>1.0.0</td>
+                <td>---</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>getrandom->libc</td>
+                <td>0.2.153</td>
+                <td>0.2.154</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>getrandom->wasi</td>
+                <td>0.11.0+wasi-snapshot-preview1</td>
+                <td>---</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>hashbrown->ahash</td>
+                <td>0.7.8</td>
+                <td>---</td>
+                <td>Removed</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>json5->pest</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>json5->pest_derive</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>json5->serde</td>
+                <td>1.0.198</td>
+                <td>1.0.200</td>
+                <td>1.0.200</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ordered-multimap->dlv-list</td>
+                <td>0.3.0</td>
+                <td>---</td>
+                <td>0.5.2</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ordered-multimap->hashbrown</td>
+                <td>0.12.3</td>
+                <td>---</td>
+                <td>0.13.2</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>pest_derive->pest</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>pest_derive->pest_generator</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>pest_generator->pest</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>pest_generator->pest_meta</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>pest_meta->pest</td>
+                <td>2.7.9</td>
+                <td>2.7.10</td>
+                <td>2.7.10</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ron->base64</td>
+                <td>0.13.1</td>
+                <td>---</td>
+                <td>0.21.7</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ron->bitflags</td>
+                <td>1.3.2</td>
+                <td>---</td>
+                <td>2.5.0</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>ron->serde</td>
+                <td>1.0.198</td>
+                <td>1.0.200</td>
+                <td>1.0.200</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>rust-ini->ordered-multimap</td>
+                <td>0.4.3</td>
+                <td>---</td>
+                <td>0.6.0</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>serde->serde_derive</td>
+                <td>1.0.198</td>
+                <td>1.0.200</td>
+                <td>1.0.200</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>serde_json->serde</td>
+                <td>1.0.198</td>
+                <td>1.0.200</td>
+                <td>1.0.200</td>
+            </tr>
+        
+            <tr>
+                <td>actions-to-website</td>
+                <td>toml->serde</td>
+                <td>1.0.198</td>
+                <td>1.0.200</td>
+                <td>1.0.200</td>
+            </tr>
+        
+    </tbody>
 </table>
 
-<h3 id="build-time-dependencies">Build-Time dependencies</h3>
 
-<table>
-    <tr>
-        <th>Dependency</th>
-        <th>Used</th>
-        <th>Latest</th>
-    </tr>
-
-
-    <tr>
-        <td>ahash-&gt;version_check</td>
-        <td>0.9.4</td>
-        <td>Removed</td>
-    </tr>
-
-</table>
-
-<h3 id="development-time-dependencies">Development-Time dependencies</h3>
-
-<table>
-    <tr>
-        <th>Dependency</th>
-        <th>Used</th>
-        <th>Latest</th>
-    </tr>
-
-
-</table>
-
-<p>For more information, see the
-<a href="https://github.com/matthiasbeyer/actions-to-website">github repository</a>.</p>
-
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-
-      </footer>
-
-      
-
-      
-    </div>
-
-    
-  </article>
-
-  
-  
-</div>
-
-    </div>
-
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-
-    
-
-    
-      <li><a href="/actions-to-website/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-    
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2024 This is an example. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/actions-to-website/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-  </body>
+            </div>
+        </section>
+    </body>
 </html>
