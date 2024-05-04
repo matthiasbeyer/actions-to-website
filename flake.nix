@@ -110,7 +110,7 @@
 
         scripts = callPackage ./scripts {};
       in
-      {
+      rec {
         checks = {
           inherit package;
 
@@ -157,66 +157,74 @@
 
             cargoLlvmCovExtraArgs = "--lcov --output-path $out/lcov";
           };
+
+          denyReport = pkgs.writeShellApplication {
+            name = "denyReport";
+            runtimeInputs = [
+              pkgs.git
+              inputs.self.packages."${system}".createDenyReport
+            ];
+
+            text = ''
+              mkdir -p site/_data
+              createDenyReport > "site/_data/denyreport.json"
+            '';
+          };
+
+          outdatedReport = pkgs.writeShellApplication {
+            name = "outdatedReport";
+            runtimeInputs = [
+              inputs.self.packages."${system}".createOutdatedReport
+            ];
+
+            text = ''
+              mkdir -p site/_data
+              createOutdatedReport > "site/_data/outdated.json"
+            '';
+          };
+
+          licenseReport = pkgs.writeShellApplication {
+            name = "licenseReport";
+            runtimeInputs = [
+              pkgs.git
+              inputs.self.packages."${system}".createLicenseReport
+            ];
+
+            text = ''
+              mkdir -p site/_data
+              createLicenseReport > "site/_data/licenses.json"
+            '';
+          };
+
+          buildSite = pkgs.writeShellApplication {
+            name = "buildSite";
+            runtimeInputs = [ gems gems.wrappedRuby ];
+
+            text = ''
+              pushd site
+              nanoc
+              popd
+            '';
+          };
         }
         // scripts.packages
         ;
 
         apps = {
           denyReport = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "denyReport";
-              runtimeInputs = [
-                pkgs.git
-                inputs.self.packages."${system}".createDenyReport
-              ];
-
-              text = ''
-                mkdir -p site/_data
-                createDenyReport > "site/_data/denyreport.json"
-              '';
-            };
+            drv = packages.denyReport;
           };
 
           outdatedReport = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "outdatedReport";
-              runtimeInputs = [
-                inputs.self.packages."${system}".createOutdatedReport
-              ];
-
-              text = ''
-                mkdir -p site/_data
-                createOutdatedReport > "site/_data/outdated.json"
-              '';
-            };
+            drv = packages.outdatedReport;
           };
 
           licenseReport = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "licenseReport";
-              runtimeInputs = [
-                pkgs.git
-                inputs.self.packages."${system}".createLicenseReport
-              ];
-
-              text = ''
-                mkdir -p site/_data
-                createLicenseReport > "site/_data/licenses.json"
-              '';
-            };
+            drv = packages.licenseReport;
           };
 
           buildSite = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "buildSite";
-              runtimeInputs = [ gems gems.wrappedRuby ];
-
-              text = ''
-                pushd site
-                nanoc
-                popd
-              '';
-            };
+            drv = packages.buildSite;
           };
 
           serveSite = inputs.flake-utils.lib.mkApp {
