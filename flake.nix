@@ -202,7 +202,7 @@
 
             text = ''
               pushd site
-              nanoc
+              nanoc "$*"
               popd
             '';
           };
