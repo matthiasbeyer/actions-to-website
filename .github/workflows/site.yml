@@ -67,6 +67,7 @@ jobs:
   site:
     needs:
       - site-coverage-master
+      - site-bloat-master
     permissions:
       contents: write
     runs-on: ubuntu-22.04
