@@ -1,0 +1,36 @@
+---
+title: cargo-license report
+---
+
+<% repo = load_repo %>
+
+<% github_repo = GithubRepoLink.new "matthiasbeyer", "actions-to-website" %>
+
+<% l = license_report %>
+
+<p>
+    Generated for revision
+    <%= link_to l["shortrev"], github_repo.commit(l["gitrev"]) %>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Crate</th>
+            <th>Version</th>
+            <th>License</th>
+            <th>Author(s)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% l["data"].each do |crate| %>
+            <tr>
+                <td><%= crate["name"] %></td>
+                <td><%= crate["version"] %></td>
+                <td><%= crate["license"] %></td>
+                <td><%= crate["authors"] %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
