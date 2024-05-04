@@ -1,0 +1,39 @@
+---
+title: cargo-outdated report
+---
+
+<% repo = load_repo %>
+
+<% github_repo = GithubRepoLink.new "matthiasbeyer", "actions-to-website" %>
+
+<% o = outdated_report %>
+
+<p>
+    Generated for revision
+    <%= link_to o["shortrev"], github_repo.commit(o["gitrev"]) %>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Crate</th>
+            <th>Dependency</th>
+            <th>Current</th>
+            <th>Compat</th>
+            <th>Latest</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% o["data"]["dependencies"].each do |dependency| %>
+            <tr>
+                <td><%= o["data"]["crate_name"] %></td>
+                <td><%= dependency["name"] %></td>
+                <td><%= dependency["project"] %></td>
+                <td><%= dependency["compat"] %></td>
+                <td><%= dependency["latest"] %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
