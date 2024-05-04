@@ -1,0 +1,28 @@
+---
+title: Coverage report
+---
+
+<% repo = load_repo %>
+
+<% github_repo = GithubRepoLink.new "matthiasbeyer", "actions-to-website" %>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Revision</th>
+            <th>Date</th>
+            <th>Coverage link</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% walker_for_first_parent(repo, "master").each do |obj| %>
+            <tr>
+                <td><%= link_to obj.oid, github_repo.commit(obj.oid) %></td>
+                <td><%= repo.lookup(obj.oid).committer[:time] %></td>
+                <td><%= link_to "Coverage", "/llvmcov/#{obj.oid}/" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
