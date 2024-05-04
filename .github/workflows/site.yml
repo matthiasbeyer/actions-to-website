@@ -169,7 +169,7 @@ jobs:
         run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#licenseReport
 
       - name: Build site
-        run: nix --extra-experimental-features "nix-command flakes" run .#buildSite
+        run: nix --extra-experimental-features "nix-command flakes" run .#buildSite -- --env=ghpages
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4
