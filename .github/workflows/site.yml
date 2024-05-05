@@ -86,17 +86,8 @@ jobs:
           # If you chose API tokens for write access OR if you have a private cache
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
-      - name: Build deny report for master
-        run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#denyReport
-
-      - name: Build outdated report for master
-        run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#outdatedReport
-
-      - name: Build outdated report for master
-        run: nix --extra-experimental-features "nix-command flakes" run --print-build-logs .#licenseReport
-
       - name: Build site
-        run: nix --extra-experimental-features "nix-command flakes" run .#buildSite -- --env=ghpages
+        run: nix --extra-experimental-features "nix-command flakes" run .#buildSiteFull -- --env=ghpages
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4

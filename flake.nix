@@ -206,6 +206,23 @@
               popd
             '';
           };
+
+          buildSiteFull = pkgs.writeShellApplication {
+            name = "buildSiteFull";
+            runtimeInputs = [
+              denyReport
+              outdatedReport
+              licenseReport
+              buildSite
+            ];
+
+            text = ''
+              denyReport
+              outdatedReport
+              licenseReport
+              buildSite "$*"
+            '';
+          };
         }
         // scripts.packages
         ;
