@@ -1,0 +1,36 @@
+---
+title: cargo-bloat report
+---
+
+<% repo = load_repo %>
+
+<% github_repo = GithubRepoLink.new "matthiasbeyer", "actions-to-website" %>
+
+
+<% cargo_bloat(repo).map do |obj| %>
+    <ul>
+        <li>Revision: <%= link_to obj["gitrev"], github_repo.commit(obj["gitrev"]) %>
+            (<%= repo.lookup(obj["gitrev"]).committer[:time] %>)
+        </li>
+
+        <li>file-size: <%= obj["data"]["file-size"] %></li>
+        <li>text-section-size: <%= obj["data"]["text-section-size"] %></li>
+    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>crate</th>
+                <th>size</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% obj["data"]["crates"].map do |crate| %>
+                <tr>
+                    <td><%= crate["name"] %></td>
+                    <td><%= crate["size"] %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>

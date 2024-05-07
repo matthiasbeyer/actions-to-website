@@ -1,0 +1,42 @@
+---
+title: cargo-deny report
+---
+
+<% repo = load_repo %>
+
+<% github_repo = GithubRepoLink.new "matthiasbeyer", "actions-to-website" %>
+
+<% d = deny_report %>
+
+<p>
+    Generated for revision
+    <%= link_to d["shortrev"], github_repo.commit(d["gitrev"]) %>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="4">Advisories</th>
+            <th colspan="4">Bans</th>
+            <th colspan="4">Licenses</th>
+            <th colspan="4">Sources</th>
+        </tr>
+        <tr>
+            <% 4.times do %>
+                <% ["errors", "warnings", "notes", "helps"].each do |metric| %>
+                    <th><%= metric %></th>
+                <% end %>
+            <% end %>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% summary = d["data"].filter { |d| d["type"] == "summary" }.first["fields"] %>
+    <% ["advisories", "bans", "licenses", "sources" ].each do |tab| %>
+        <% ["errors", "warnings", "notes", "helps"].each do |metric| %>
+            <td><%= summary[tab][metric] %></td>
+        <% end %>
+    <% end %>
+    </tbody>
+</table>
+

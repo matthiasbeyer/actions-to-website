@@ -103,7 +103,11 @@
           esac
         '';
 
-        site = callPackage ./site {};
+         gems = pkgs.bundlerEnv {
+          name = "site";
+          gemdir = ./site;
+        };
+
         scripts = callPackage ./scripts {};
       in
       rec {
@@ -126,9 +130,7 @@
               pkgs.coreutils
             ];
           };
-        }
-        // site.checks
-        ;
+        };
 
         packages = rec {
           default = package;
@@ -155,76 +157,102 @@
 
             cargoLlvmCovExtraArgs = "--lcov --output-path $out/lcov";
           };
+
+          denyReport = pkgs.writeShellApplication {
+            name = "denyReport";
+            runtimeInputs = [
+              pkgs.git
+              inputs.self.packages."${system}".createDenyReport
+            ];
+
+            text = ''
+              mkdir -p site/_data
+              createDenyReport > "site/_data/denyreport.json"
+            '';
+          };
+
+          outdatedReport = pkgs.writeShellApplication {
+            name = "outdatedReport";
+            runtimeInputs = [
+              inputs.self.packages."${system}".createOutdatedReport
+            ];
+
+            text = ''
+              mkdir -p site/_data
+              createOutdatedReport > "site/_data/outdated.json"
+            '';
+          };
+
+          licenseReport = pkgs.writeShellApplication {
+            name = "licenseReport";
+            runtimeInputs = [
+              pkgs.git
+              inputs.self.packages."${system}".createLicenseReport
+            ];
+
+            text = ''
+              mkdir -p site/_data
+              createLicenseReport > "site/_data/licenses.json"
+            '';
+          };
+
+          buildSite = pkgs.writeShellApplication {
+            name = "buildSite";
+            runtimeInputs = [ gems gems.wrappedRuby ];
+
+            text = ''
+              pushd site
+              nanoc "$*"
+              popd
+            '';
+          };
+
+          buildSiteFull = pkgs.writeShellApplication {
+            name = "buildSiteFull";
+            runtimeInputs = [
+              denyReport
+              outdatedReport
+              licenseReport
+              buildSite
+            ];
+
+            text = ''
+              denyReport
+              outdatedReport
+              licenseReport
+              buildSite "$*"
+            '';
+          };
         }
-        // site.packages
         // scripts.packages
         ;
 
         apps = {
-          buildSite = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "buildSite";
-              runtimeInputs = [ packages.gems ];
+          denyReport = inputs.flake-utils.lib.mkApp {
+            drv = packages.denyReport;
+          };
 
-              text = ''
-                cd site
-                jekyll build --destination ../public
-              '';
-            };
+          outdatedReport = inputs.flake-utils.lib.mkApp {
+            drv = packages.outdatedReport;
+          };
+
+          licenseReport = inputs.flake-utils.lib.mkApp {
+            drv = packages.licenseReport;
+          };
+
+          buildSite = inputs.flake-utils.lib.mkApp {
+            drv = packages.buildSite;
           };
 
           serveSite = inputs.flake-utils.lib.mkApp {
             drv = pkgs.writeShellApplication {
               name = "buildSite";
-              runtimeInputs = [ packages.gems ];
+              runtimeInputs = [ gems gems.wrappedRuby ];
 
               text = ''
-                cd site
-                jekyll serve --destination ../public
-              '';
-            };
-          };
-
-          denyReport = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "denyReport";
-              runtimeInputs = [
-                pkgs.git
-                inputs.self.packages."${system}".createDenyReport
-              ];
-
-              text = ''
-                mkdir -p site/_data
-                createDenyReport > "site/_data/denyreport.json"
-              '';
-            };
-          };
-
-          outdatedReport = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "outdatedReport";
-              runtimeInputs = [
-                inputs.self.packages."${system}".createOutdatedReport
-              ];
-
-              text = ''
-                mkdir -p site/_data
-                createOutdatedReport > "site/_data/outdated.json"
-              '';
-            };
-          };
-
-          licenseReport = inputs.flake-utils.lib.mkApp {
-            drv = pkgs.writeShellApplication {
-              name = "licenseReport";
-              runtimeInputs = [
-                pkgs.git
-                inputs.self.packages."${system}".createLicenseReport
-              ];
-
-              text = ''
-                mkdir -p site/_data
-                createLicenseReport > "site/_data/licenses.json"
+                pushd site
+                nanoc view
+                popd
               '';
             };
           };
@@ -244,7 +272,8 @@
             pkgs.cargo-bloat
 
             pkgs.gitlint
-            packages.gems
+            gems
+            gems.wrappedRuby
           ];
         };
 

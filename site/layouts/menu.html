@@ -1,0 +1,21 @@
+<aside class="menu">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+        <li><a>Github</a></li>
+        <li><a>Documentation</a></li>
+    </ul>
+
+    <p class="menu-label">Administration</p>
+    <ul class="menu-list">
+        <li><a>CI</a></li>
+
+        <li>Project statistics</li>
+        <li>
+            <a><%= link_to "Coverage Report", with_base_url("/coverage/") %></a>
+            <a><%= link_to "Deny Report", with_base_url("/deny/") %></a>
+            <a><%= link_to "Outdated Report", with_base_url("/outdated/") %></a>
+            <a><%= link_to "Bloat Report", with_base_url("/bloat/") %></a>
+            <a><%= link_to "Used licenses", with_base_url("/licenses/") %></a>
+        </li>
+    </ul>
+</aside>
