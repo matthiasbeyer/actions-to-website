@@ -6,6 +6,8 @@ title: cargo-bloat report
 
 <% github_repo = GithubRepoLink.new "matthiasbeyer", "actions-to-website" %>
 
+This site shows the <i>cargo-bloat</i> output for the merges to the master
+branch.
 
 <% cargo_bloat(repo).map do |obj| %>
     <ul>
