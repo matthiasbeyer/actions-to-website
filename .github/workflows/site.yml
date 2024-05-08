@@ -87,7 +87,7 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
       - name: Build site
-        run: nix --extra-experimental-features "nix-command flakes" run .#buildSiteFull -- --env=ghpages
+        run: nix --extra-experimental-features "nix-command flakes" run .#buildSiteFull -- compile -V --env=ghpages
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4
