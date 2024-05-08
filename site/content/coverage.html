@@ -20,7 +20,7 @@ title: Coverage report
             <tr>
                 <td><%= link_to obj.oid, github_repo.commit(obj.oid) %></td>
                 <td><%= repo.lookup(obj.oid).committer[:time] %></td>
-                <td><%= link_to "Coverage", "/llvmcov/#{obj.oid}/html/index.html" %></td>
+                <td><%= link_to "Coverage", with_base_url("/llvmcov/#{obj.oid}/html/index.html") %></td>
             </tr>
         <% end %>
     </tbody>
