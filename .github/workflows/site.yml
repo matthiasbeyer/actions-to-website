@@ -77,7 +77,7 @@ jobs:
           fetch-depth: 0 # so we can generate the coverage list links
 
       - name: Fetch git-notes
-        run: git fetch origin refs/notes/*
+        run: git fetch origin refs/notes/cargo-bloat-report:refs/notes/cargo-bloat-report
 
       - uses: cachix/install-nix-action@v26
         with:
