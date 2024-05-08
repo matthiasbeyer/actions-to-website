@@ -6,3 +6,4 @@ gem "nanoc"
 gem "adsf"
 gem "webrick"
 gem "rugged", '~> 1.1.0'
+gem "gruff"

@@ -14,6 +14,10 @@ GEM
     ddmetrics (1.1.0)
     ddplugin (1.0.3)
     diff-lcs (1.5.1)
+    gruff (0.24.0)
+      histogram
+      rmagick (>= 5.3)
+    histogram (0.2.4.1)
     immutable-ruby (0.2.0)
       concurrent-ruby (~> 1.1)
       sorted_set (~> 1.0)
@@ -55,9 +59,11 @@ GEM
       nanoc-checking (~> 1.0)
       nanoc-cli (~> 4.11, >= 4.11.15)
       nanoc-core (~> 4.11, >= 4.11.15)
+    observer (0.1.2)
     parallel (1.24.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
+    pkg-config (1.5.6)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -69,6 +75,9 @@ GEM
       rack (>= 3)
       webrick (~> 1.8)
     rbtree (0.4.6)
+    rmagick (6.0.0)
+      observer (~> 0.1)
+      pkg-config (~> 1.4)
     rugged (1.1.1)
     set (1.1.0)
     slow_enumerator_tools (1.1.0)
@@ -89,9 +98,10 @@ PLATFORMS
 
 DEPENDENCIES
   adsf
+  gruff
   nanoc
   rugged (~> 1.1.0)
   webrick
 
 BUNDLED WITH
-   2.5.7
+   2.5.9
