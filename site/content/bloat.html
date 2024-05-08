@@ -9,14 +9,14 @@ title: cargo-bloat report
 This site shows the <i>cargo-bloat</i> output for the merges to the master
 branch.
 
-<% cargo_bloat(repo).map do |obj| %>
+<% @items.find_all("/external/gitbloat/*").map do |obj| %>
     <ul>
-        <li>Revision: <%= link_to obj["gitrev"], github_repo.commit(obj["gitrev"]) %>
-            (<%= repo.lookup(obj["gitrev"]).committer[:time] %>)
+        <li>Revision: <%= link_to obj[:gitrev], github_repo.commit(obj[:gitrev]) %>
+            (<%= repo.lookup(obj[:gitrev]).committer[:time] %>)
         </li>
 
-        <li>file-size: <%= obj["data"]["file-size"] %></li>
-        <li>text-section-size: <%= obj["data"]["text-section-size"] %></li>
+        <li>file-size: <%= obj[:data][:"file-size"] %></li>
+        <li>text-section-size: <%= obj[:data][:"text-section-size"] %></li>
     </ul>
     <table class="table">
         <thead>
@@ -27,12 +27,16 @@ branch.
         </thead>
 
         <tbody>
-            <% obj["data"]["crates"].map do |crate| %>
+            <% obj[:data][:crates].map do |crate| %>
                 <tr>
-                    <td><%= crate["name"] %></td>
-                    <td><%= crate["size"] %></td>
+                    <td><%= crate[:name] %></td>
+                    <td><%= crate[:size] %></td>
                 </tr>
             <% end %>
         </tbody>
     </table>
 <% end %>
+
+<% target_path = mk_static_path("cargo-bloat-filesize.png") %>
+<% cargo_bloat_graph repo, target_path %>
+<img src="<%= target_path %>" alt="Cargo bloat filesize graph">

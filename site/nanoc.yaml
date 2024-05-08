@@ -10,6 +10,15 @@ data_sources:
   - type: filesystem
     encoding: utf-8
 
+  - type: git
+    items_root: /external/git
+
+  - type: gitbloat
+    items_root: /external/gitbloat
+
+  - type: gitcoverage
+    items_root: /external/gitcoverage
+
 environments:
   ghpages:
     base_url: https://matthiasbeyer.github.io/actions-to-website

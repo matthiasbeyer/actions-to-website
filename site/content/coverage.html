@@ -16,11 +16,12 @@ title: Coverage report
     </thead>
 
     <tbody>
-        <% walker_for_first_parent(repo, "master").each do |obj| %>
+        <% @items.find_all("/external/gitcoverage/*").each do |obj| %>
             <tr>
-                <td><%= link_to obj.oid, github_repo.commit(obj.oid) %></td>
-                <td><%= repo.lookup(obj.oid).committer[:time] %></td>
-                <td><%= link_to "Coverage", with_base_url("/llvmcov/#{obj.oid}/html/index.html") %></td>
+                <% oid = obj[:oid] %>
+                <td><%= link_to oid, github_repo.commit(oid) %></td>
+                <td><%= repo.lookup(oid).committer[:time] %></td>
+                <td><%= link_to "Coverage", with_base_url("/llvmcov/#{oid}/html/index.html") %></td>
             </tr>
         <% end %>
     </tbody>
