@@ -202,7 +202,7 @@
 
             text = ''
               pushd site
-              nanoc "$*"
+              nanoc "$@"
               popd
             '';
           };
@@ -220,7 +220,7 @@
               denyReport
               outdatedReport
               licenseReport
-              buildSite "$*"
+              buildSite "$@"
             '';
           };
         }
