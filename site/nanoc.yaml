@@ -10,4 +10,6 @@ data_sources:
   - type: filesystem
     encoding: utf-8
 
-base_url: https://matthiasbeyer.github.io/actions-to-website
+environments:
+  ghpages:
+    base_url: https://matthiasbeyer.github.io/actions-to-website
