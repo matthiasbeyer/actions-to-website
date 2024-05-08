@@ -76,6 +76,9 @@ jobs:
         with:
           fetch-depth: 0 # so we can generate the coverage list links
 
+      - name: Fetch git-notes
+        run: git fetch refs/notes/*
+
       - uses: cachix/install-nix-action@v26
         with:
           nix_path: nixpkgs=channel:nixos-unstable
