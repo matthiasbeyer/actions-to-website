@@ -37,6 +37,6 @@ branch.
     </table>
 <% end %>
 
-<% target_path = mk_static_path("cargo-bloat-filesize.png") %>
-<% cargo_bloat_graph repo, target_path %>
-<img src="<%= target_path %>" alt="Cargo bloat filesize graph">
+<% bloat = @items.find("/external/gitbloat-graph/cargobloat.png").first %>
+<% puts bloat  %>
+<img src="<%= bloat.path %>" alt="Cargo bloat filesize graph">
