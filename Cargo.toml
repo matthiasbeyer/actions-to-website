@@ -8,4 +8,4 @@ publish = false
 
 [dependencies]
 clap = "=4.5.23"
-config = "=0.15.4"
+config = "=0.15.6"
