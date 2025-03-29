@@ -16,6 +16,9 @@ data_sources:
   - type: gitbloat
     items_root: /external/gitbloat
 
+  - type: gitbloatgraph
+    items_root: /external/gitbloat-graph
+
   - type: gitcoverage
     items_root: /external/gitcoverage
 
